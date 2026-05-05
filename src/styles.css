@@ -1,0 +1,27 @@
+@import "@diligentcorp/atlas-react-bundle/styles";
+@import "@diligentcorp/atlas-react-bundle/global-nav.css";
+
+/**
+ * Prototype shell wraps `atlas-gn-nav-link` in <a>. MUI theme / user-agent styles can
+ * add `text-decoration: underline` on those anchors in the default (rest) state; Atlas
+ * nav links manage their own styling — reset here so rest/hover match Atlas intent.
+ */
+#root mock-hb-global-navigator a,
+#root mock-hb-global-navigator a:visited {
+  text-decoration: none;
+}
+
+#root mock-hb-global-navigator a:hover,
+#root mock-hb-global-navigator a:focus-visible {
+  text-decoration: none;
+}
+
+/* Screen-reader-only utility — all other styling lives in sx props with Atlas design tokens */
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
