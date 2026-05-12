@@ -1,1 +1,1 @@
-import "@diligentcorp/atlas-react-bundle/lib/index.d.ts";
+/// <reference types="@diligentcorp/atlas-react-bundle/types" />

@@ -3,6 +3,9 @@ import { Outlet, Route, Routes } from "react-router";
 import "./styles.css";
 
 import Navigation from "./Navigation.js";
+import ObjectListPage from "./pages/ObjectListPage.js";
+import ObjectDetailPage from "./pages/ObjectDetailPage.js";
+import RecordDetailPage from "./pages/RecordDetailPage.js";
 import SchemaManagementPage from "./pages/SchemaManagementPage.js";
 import RolesHomePage from "./pages/RolesHomePage.js";
 import RoleEditPage from "./pages/RoleEditPage.js";
@@ -23,7 +26,10 @@ export default function App() {
           </AppLayout>
         }
       >
-        <Route path="/" element={<SchemaManagementPage />} />
+        <Route path="/" element={<ObjectListPage />} />
+        <Route path="/objects/:objectType" element={<ObjectDetailPage />} />
+        <Route path="/objects/:objectType/records/:recordId" element={<RecordDetailPage />} />
+        <Route path="/objects/:objectType/schema" element={<SchemaManagementPage />} />
         <Route path="/workflows" element={<WorkflowsPlaceholderPage />} />
         <Route path="/workflows/template/edit" element={<WorkflowTemplateEditorPage />} />
         <Route path="/roles" element={<RolesHomePage />} />
